@@ -1,0 +1,1 @@
+This is exercise 06. Read the input, turn on LED
