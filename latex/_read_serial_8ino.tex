@@ -1,0 +1,104 @@
+\doxysection{Read\+Serial/\+\+Read\+Serial.ino File Reference}
+\hypertarget{_read_serial_8ino}{}\label{_read_serial_8ino}\index{ReadSerial/ReadSerial.ino@{ReadSerial/ReadSerial.ino}}
+{\ttfamily \+\#include $<$SPI.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{_read_serial_8ino_a6c2a9f7efd46f0160f3037869924d6ce}{P1}}~D0
+\begin{DoxyCompactList}\small\item\em LED output pin definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{_read_serial_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Arduino setup function. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_read_serial_8ino_a73a331f073656e765a77b510051d8bde}{LEDSoff}} ()
+\begin{DoxyCompactList}\small\item\em Turns all LED outputs off. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_read_serial_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Arduino main loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{_read_serial_8ino_a397ad71dafc473780434d525fd8995c8}{send\+Data}} = 0
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} SPI library included (not used in this sketch) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_read_serial_8ino_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_read_serial_8ino_a6c2a9f7efd46f0160f3037869924d6ce}\index{ReadSerial.ino@{ReadSerial.ino}!P1@{P1}}
+\index{P1@{P1}!ReadSerial.ino@{ReadSerial.ino}}
+\doxysubsubsection{\texorpdfstring{P1}{P1}}
+{\footnotesize\ttfamily \label{_read_serial_8ino_a6c2a9f7efd46f0160f3037869924d6ce} 
+\+\#define P1~D0}
+
+
+
+LED output pin definition. 
+
+{\ttfamily \doxylink{_read_serial_8ino_a6c2a9f7efd46f0160f3037869924d6ce}{P1}} is a macro alias for pin {\ttfamily D0}. This sketch uses \doxylink{_read_serial_8ino_a6c2a9f7efd46f0160f3037869924d6ce}{P1} as the LED control pin. 
+
+\label{doc-func-members}
+\Hypertarget{_read_serial_8ino_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_read_serial_8ino_a73a331f073656e765a77b510051d8bde}\index{ReadSerial.ino@{ReadSerial.ino}!LEDSoff@{LEDSoff}}
+\index{LEDSoff@{LEDSoff}!ReadSerial.ino@{ReadSerial.ino}}
+\doxysubsubsection{\texorpdfstring{LEDSoff()}{LEDSoff()}}
+{\footnotesize\ttfamily \label{_read_serial_8ino_a73a331f073656e765a77b510051d8bde} 
+void LEDSoff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Turns all LED outputs off. 
+
+Sets pin \doxylink{_read_serial_8ino_a6c2a9f7efd46f0160f3037869924d6ce}{P1} LOW to ensure the LED is turned off. \Hypertarget{_read_serial_8ino_afe461d27b9c48d5921c00d521181f12f}\index{ReadSerial.ino@{ReadSerial.ino}!loop@{loop}}
+\index{loop@{loop}!ReadSerial.ino@{ReadSerial.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{_read_serial_8ino_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Arduino main loop. 
+
+
+\begin{DoxyItemize}
+\item Checks if a byte is available on the Serial interface.
+\item Reads one byte with Serial.\+read() and stores it in \doxylink{_read_serial_8ino_a397ad71dafc473780434d525fd8995c8}{send\+Data}.
+\item Uses a switch statement to compare the received value to expected ASCII codes.
+\item Prints the received value as a decimal number.
+\end{DoxyItemize}
+
+Cases:\+
+\begin{DoxyItemize}
+\item 97 or \textquotesingle{}a\textquotesingle{}:\+ turns LEDs off, then turns P1 on, prints 97
+\item \textquotesingle{}b\textquotesingle{} (98):\+ turns LEDs off, prints 98
+\item 99 or \textquotesingle{}c\textquotesingle{}:\+ turns LEDs off, prints 99
+\item 100 or \textquotesingle{}d\textquotesingle{}:\+ turns LEDs off, prints 100
+\item 101 or \textquotesingle{}e\textquotesingle{}:\+ turns LEDs off, prints 101
+\item default:\+ turns LEDs off, prints whatever was received 
+\end{DoxyItemize}\Hypertarget{_read_serial_8ino_a4fc01d736fe50cf5b977f755b675f11d}\index{ReadSerial.ino@{ReadSerial.ino}!setup@{setup}}
+\index{setup@{setup}!ReadSerial.ino@{ReadSerial.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{_read_serial_8ino_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Arduino setup function. 
+
+Initializes Serial communication at 9600 baud and configures pin D0 as an output. 
+
+\label{doc-var-members}
+\Hypertarget{_read_serial_8ino_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{_read_serial_8ino_a397ad71dafc473780434d525fd8995c8}\index{ReadSerial.ino@{ReadSerial.ino}!sendData@{sendData}}
+\index{sendData@{sendData}!ReadSerial.ino@{ReadSerial.ino}}
+\doxysubsubsection{\texorpdfstring{sendData}{sendData}}
+{\footnotesize\ttfamily \label{_read_serial_8ino_a397ad71dafc473780434d525fd8995c8} 
+int send\+Data = 0}
+
+
+
+\texorpdfstring{$<$}{<} SPI library included (not used in this sketch) 
+
+Stores the latest received byte from Serial 
